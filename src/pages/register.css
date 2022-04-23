@@ -1,0 +1,14 @@
+@media all and (min-width: 480px) {
+    .Account{
+      padding: 120px 0;
+    }
+  
+    .Account form {
+      margin: 0 auto;
+      max-width: 320px;
+      font-size: 1.0rem;
+      height: 44,;
+      padding: 10,;
+
+    }
+  }
