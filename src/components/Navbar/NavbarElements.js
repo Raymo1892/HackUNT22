@@ -17,8 +17,9 @@ export const Nav = styled.nav`
 export const NavLink = styled(Link)`
   color: #FFFFFF;
   display: flex;
+  font-size: 2em;
   align-items: center;
-  margin-right: 1.8rem;
+  margin-right: 1.0rem;
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
