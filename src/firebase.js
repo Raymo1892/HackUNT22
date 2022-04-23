@@ -1,8 +1,4 @@
 // Import the functions you need from the SDKs you need
-<<<<<<< Updated upstream
-//import firebase from './firebase'
-=======
->>>>>>> Stashed changes
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
@@ -24,8 +20,4 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-<<<<<<< Updated upstream
-export { auth }
-=======
 export const auth = getAuth(app);
->>>>>>> Stashed changes

@@ -1,11 +1,3 @@
-<<<<<<< Updated upstream
-import React from 'react';
-
-const Contact = () => {
-    return (
-        <div>
-            <h1>Mail us on feedback@geeksforgeeks.org</h1>
-=======
 import { useState } from "react";
 import {
     createUserWithEmailAndPassword,
@@ -102,13 +94,8 @@ function App() {
             {user?.email}
 
             <button onClick={logout}> Sign Out </button>
->>>>>>> Stashed changes
         </div>
     );
 }
 
-<<<<<<< Updated upstream
-export default Contact;
-=======
 export default App;
->>>>>>> Stashed changes
