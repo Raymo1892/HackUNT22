@@ -1,18 +1,16 @@
 import React from 'react';
-import {Image, NavLink, Button} from "./indexElements";
+import {Image, Button, NavLink} from "./indexElements";
 
 const Home = () => {
     return (
         <div>
-            <NavLink to="/contact" activeStyle>
-                <Image>
-                    <img src={require("./img/moviePoster1.png")} alt="logo" width={400} height={600}/>
-                </Image>
-            </NavLink>
+            <Image>
+                <img src={require("./img/moviePoster1.png")} alt="logo" width={400} height={600}/>
+            </Image>
             <Button>
                 Tickets
             </Button>
-            <NavLink to="/contact" activeStyle>
+            <NavLink to="/movie2" activeStyle>
                 <Image>
                     <img src={require("./img/moviePoster2.png")} alt="logo" width={400} height={600}/>
                 </Image>
@@ -20,7 +18,7 @@ const Home = () => {
             <Button>
                 Tickets
             </Button>
-            <NavLink to="/contact" activeStyle>
+            <NavLink to="/movie3" activeStyle>
                 <Image>
                     <img src={require("./img/moviePoster3.png")} alt="logo" width={400} height={600}/>
                 </Image>
@@ -28,7 +26,7 @@ const Home = () => {
             <Button>
                 Tickets
             </Button>
-            <NavLink to="/contact" activeStyle>
+            <NavLink to="/movie4" activeStyle>
                 <Image>
                     <img src={require("./img/moviePoster4.png")} alt="logo" width={400} height={600}/>
                 </Image>

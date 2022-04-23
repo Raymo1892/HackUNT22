@@ -17,7 +17,7 @@ export const Image = styled.div`
   align-items: center;
   margin-left: 2.0rem;
   alignSelf: center;
-
+  display: flex;
 `;
 
 export const Button = styled.button`
