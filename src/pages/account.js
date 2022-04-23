@@ -1,16 +1,15 @@
+import React from 'react'
 import { useState } from "react";
 import {
-    createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     onAuthStateChanged,
     signOut,
 } from "firebase/auth";
 import "./account.css";
+import { NavLink, Button } from "./accountElements";
 import { auth } from "../firebase";
 
-function App() {
-    const [registerEmail, setRegisterEmail] = useState("");
-    const [registerPassword, setRegisterPassword] = useState("");
+function Account() {
     const [loginEmail, setLoginEmail] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
 
@@ -19,19 +18,6 @@ function App() {
     onAuthStateChanged(auth, (currentUser) => {
         setUser(currentUser);
     });
-
-    const register = async () => {
-        try {
-            const user = await createUserWithEmailAndPassword(
-                auth,
-                registerEmail,
-                registerPassword
-            );
-            console.log(user);
-        } catch (error) {
-            console.log(error.message);
-        }
-    };
 
     const login = async () => {
         try {
@@ -43,6 +29,7 @@ function App() {
             console.log(user);
         } catch (error) {
             console.log(error.message);
+            alert("Invalid Email/Password");
         }
     };
 
@@ -52,24 +39,6 @@ function App() {
 
     return (
         <div className="App">
-            <div>
-                <h3> Register User </h3>
-                <input
-                    placeholder="Email"
-                    onChange={(event) => {
-                        setRegisterEmail(event.target.value);
-                    }}
-                />
-                <input
-                    placeholder="Password"
-                    type="password"
-                    onChange={(event) => {
-                        setRegisterPassword(event.target.value);
-                    }}
-                />
-
-                <button onClick={register}> Create User</button>
-            </div>
 
             <div>
                 <h3> Login </h3>
@@ -94,8 +63,14 @@ function App() {
             {user?.email}
 
             <button onClick={logout}> Sign Out </button>
+
+            <NavLink to="/register" activeStyle>
+                <Button>
+                    Register
+                </Button>
+            </NavLink>
         </div>
     );
 }
 
-export default App;
+export default Account;
