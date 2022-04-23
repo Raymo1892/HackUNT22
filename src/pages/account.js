@@ -1,130 +1,101 @@
-/*import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import { useState } from "react";
+import {
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut,
+} from "firebase/auth";
 import "./account.css";
 import { auth } from "../firebase";
-import { signInWithEmailAndPassword } from "@firebase/auth";
-import * as firebase from "../firebase";
 
-export default function Account() {
-    /*const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+function App() {
+    const [registerEmail, setRegisterEmail] = useState("");
+    const [registerPassword, setRegisterPassword] = useState("");
+    const [loginEmail, setLoginEmail] = useState("");
+    const [loginPassword, setLoginPassword] = useState("");
 
-    function validateForm() {
-        return email.length > 0 && password.length > 0;
-    }
+    const [user, setUser] = useState({});
 
-    function handleSubmit(event) {
-        event.preventDefault();
-    }
-    const auth = getAuth();
-    signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            // Signed in 
-            const user = userCredential.user;
-            // ...
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            //alert("Invalid Email/Password");
-        });
+    onAuthStateChanged(auth, (currentUser) => {
+        setUser(currentUser);
+    });
 
-    const Account = () => {
-        const emailRef = useRef(null);
-        const passwordRef = useRef(null);
-        const signUp = e => {
-            e.preventDefault();
-            auth.createUserWithEmailAndPassword(
-                emailRef.current.value,
-                passwordRef.current.value
-            ).then(user => {
-                console.log(user)
-            }).catch(err => {
-                console.log(err)
-            })
+    const register = async () => {
+        try {
+            const user = await createUserWithEmailAndPassword(
+                auth,
+                registerEmail,
+                registerPassword
+            );
+            console.log(user);
+        } catch (error) {
+            console.log(error.message);
         }
-        const signin = e => {
-            e.preventDefault();
-            auth.signInWithEmailAndPassword(
-                emailRef.current.value,
-                passwordRef.current.value
-            ).then(user => {
-                console.log(user)
-            }).catch(err => {
-                console.log(err)
-            })
+    };
+
+    const login = async () => {
+        try {
+            const user = await signInWithEmailAndPassword(
+                auth,
+                loginEmail,
+                loginPassword
+            );
+            console.log(user);
+        } catch (error) {
+            console.log(error.message);
         }
-        return (
-            <div className="Account">
-                <Form onSubmit={handleSubmit}>
-                    <Form.Group size="lg" controlId="email">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control
-                            autoFocus
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            placeholder={"Enter email here"}
-                        />
-                    </Form.Group>
-                    <Form.Group size="lg" controlId="password">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control
-                            type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            placeholder={"Enter password here"}
-                        />
-                    </Form.Group>
-                    <Button block size="lg" type="submit" disabled={!validateForm()}
-                        style={{
-                            maxWidth: "100px",
-                            maxHeight: "5555px",
-                            minWidth: "234px",
-                            minHeight: "30px"
-                        }}
-                    >
-                        Login
-                    </Button>
-                </Form>
-            </div >
-        );
-    }*/
+    };
 
-//export default Account;
+    const logout = async () => {
+        await signOut(auth);
+    };
 
-import React, { useRef } from 'react'
-import { auth } from '../firebase';
-import './account.css'
-const Signin = () => {
-    const emailRef = useRef(null);
-    const passwordRef = useRef(null);
-    const signUp = e => {
-        e.preventDefault();
-        auth.createUserWithEmailAndPassword(
-            emailRef.current.value,
-            passwordRef.current.value
-        ).then(user => {
-            console.log(user)
-        }).catch(err => {
-            console.log(err)
-        })
-    }
-    const signIn = e => {
-        e.preventDefault();
-        auth.signInWithEmailAndPassword(
-            emailRef.current.value,
-            passwordRef.current.value
-        ).then(user => {
-            console.log(user)
-        }).catch(err => {
-            console.log(err)
-        })
-    }
     return (
-        <h1>Account</h1>
-    );
-};
+        <div className="App">
+            <div>
+                <h3> Register User </h3>
+                <input
+                    placeholder="Email"
+                    onChange={(event) => {
+                        setRegisterEmail(event.target.value);
+                    }}
+                />
+                <input
+                    placeholder="Password"
+                    type="password"
+                    onChange={(event) => {
+                        setRegisterPassword(event.target.value);
+                    }}
+                />
 
-export default Signin
+                <button onClick={register}> Create User</button>
+            </div>
+
+            <div>
+                <h3> Login </h3>
+                <input
+                    placeholder="Email"
+                    onChange={(event) => {
+                        setLoginEmail(event.target.value);
+                    }}
+                />
+                <input
+                    placeholder="Password"
+                    type="password"
+                    onChange={(event) => {
+                        setLoginPassword(event.target.value);
+                    }}
+                />
+
+                <button onClick={login}> Login</button>
+            </div>
+
+            <h4> User Logged In: </h4>
+            {user?.email}
+
+            <button onClick={logout}> Sign Out </button>
+        </div>
+    );
+}
+
+export default App;
