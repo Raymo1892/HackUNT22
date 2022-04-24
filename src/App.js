@@ -8,6 +8,11 @@ import Account from './pages/account';
 import SignUp from './pages/signup';
 import Contact from './pages/contact';
 import Register from './pages/register';
+<<<<<<< Updated upstream
+=======
+import SignUp from './pages/signup';
+import Movie1 from './pages/movie1-1'
+>>>>>>> Stashed changes
 
 function App() {
   return (
@@ -20,6 +25,7 @@ function App() {
         <Route path='/account' element={<Account />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/movie1-1' element={<Movie1 />} />
       </Routes>
     </Router>
   );

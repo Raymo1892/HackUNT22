@@ -19,3 +19,29 @@ export const Button = styled.button`
   display: block;
   flexDirection: row;
 `;
+
+export const Seats = styled.button`
+  background: ${props => props.primary ? "black" : "white"};
+  color: ${props => props.primary ? "white" : "black"};
+
+  font-size: 1em;
+  margin: 1.2em;
+  padding: 2em;
+  border: 5px solid black;
+  border-radius: 10px;
+  display: block;
+  flexDirection: row;
+`;
+
+export const Invisible = styled.button`
+  background: ${props => props.primary ? "white" : "white"};
+  color: ${props => props.primary ? "white" : "white"};
+
+  font-size: 1em;
+  margin: 1em;
+  padding: 1em;
+  border: 0px solid black;
+  border-radius: 10px;
+  display: block;
+  flexDirection: row;
+`;

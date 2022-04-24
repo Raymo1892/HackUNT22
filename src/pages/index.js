@@ -11,7 +11,7 @@ const Home = () => {
 
     let navigate = useNavigate(); 
     const routeChange = () =>{ 
-      let path = `./movie1`;
+      let path = `./movie1-1`;
       navigate(path);
     };
 
@@ -88,6 +88,12 @@ const Home = () => {
                     Tickets
                 </Link>
             </Button>
+            <hr  style={{
+                color: '#000000',
+                backgroundColor: '#000000',
+                height: .5,
+                borderColor : '#000000'
+                }}/>
             <View style={{ flexDirection:"row", padding: 100 }}>
             <Image>
                 <img src={require("./img/moviePoster3.png")} alt="logo" width={400} height={600}/>
@@ -134,6 +140,12 @@ const Home = () => {
             </View>
             </View>
             </View>
+                        <hr  style={{
+                color: '#000000',
+                backgroundColor: '#000000',
+                height: .5,
+                borderColor : '#000000'
+                }}/>
             <Image>
                 <img src={require("./img/moviePoster4.png")} alt="logo" width={400} height={600}/>
             </Image>
