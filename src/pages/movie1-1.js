@@ -1,66 +1,66 @@
 import React from 'react';
-import {Seats, Invisible} from "./indexElements";
+import { Seats, Invisible } from "./indexElements";
 import { View } from "react-native";
 
 const Movie1 = () => {
     return (
         <>
             <Invisible>Filler</Invisible>
-            <hr style={{width:"50%", size:"5", color:"black", height:"50%"}}></hr>
+            <hr style={{ width: "50%", size: "5", color: "black", height: "50%" }}></hr>
             <Invisible>Filler</Invisible>
-            <View style={{ flexDirection:"row"}}>
-            <Invisible>Filler</Invisible>
-            <Seats>1A</Seats>
-            <Seats>2A</Seats>
-            <Invisible>Filler</Invisible>
-            <Seats>3A</Seats>
-            <Seats>4A</Seats>
-            <Seats>5A</Seats>
-            <Seats>6A</Seats>
-            </View>
-            
-            <View style={{ flexDirection:"row"}}>
-            <Invisible>Filler</Invisible>
-            <Seats>1B</Seats>
-            <Seats>2B</Seats>
-            <Invisible>Filler</Invisible>
-            <Seats>3B</Seats>
-            <Seats>4B</Seats>
-            <Seats>5B</Seats>
-            <Seats>6B</Seats>
+            <View style={{ flexDirection: "row" }}>
+                <Invisible>Filler</Invisible>
+                <Seats>A1</Seats>
+                <Seats>A2</Seats>
+                <Invisible>Filler</Invisible>
+                <Seats>A3</Seats>
+                <Seats>A4</Seats>
+                <Seats>A5</Seats>
+                <Seats>A6</Seats>
             </View>
 
-            <View style={{ flexDirection:"row"}}>
-            <Invisible>Filler</Invisible>
-            <Seats>1C</Seats>
-            <Seats>2C</Seats>
-            <Invisible>Filler</Invisible>
-            <Seats>3C</Seats>
-            <Seats>4C</Seats>
-            <Seats>5C</Seats>
-            <Seats>6C</Seats>
+            <View style={{ flexDirection: "row" }}>
+                <Invisible>Filler</Invisible>
+                <Seats>B1</Seats>
+                <Seats>B2</Seats>
+                <Invisible>Filler</Invisible>
+                <Seats>B3</Seats>
+                <Seats>B4</Seats>
+                <Seats>B5</Seats>
+                <Seats>B6</Seats>
             </View>
 
-            <View style={{ flexDirection:"row"}}>
-            <Invisible>Filler</Invisible>
-            <Seats>1D</Seats>
-            <Seats>2D</Seats>
-            <Invisible>Filler</Invisible>
-            <Seats>3D</Seats>
-            <Seats>4D</Seats>
-            <Seats>5D</Seats>
-            <Seats>6D</Seats>
+            <View style={{ flexDirection: "row" }}>
+                <Invisible>Filler</Invisible>
+                <Seats>C1</Seats>
+                <Seats>C2</Seats>
+                <Invisible>Filler</Invisible>
+                <Seats>C3</Seats>
+                <Seats>C4</Seats>
+                <Seats>C5</Seats>
+                <Seats>C6</Seats>
             </View>
 
-            <View style={{ flexDirection:"row"}}>
-            <Invisible>Filler</Invisible>
-            <Seats>1E</Seats>
-            <Seats>2E</Seats>
-            <Invisible>Filler</Invisible>
-            <Seats>3E</Seats>
-            <Seats>4E</Seats>
-            <Seats>5E</Seats>
-            <Seats>6E</Seats>
+            <View style={{ flexDirection: "row" }}>
+                <Invisible>Filler</Invisible>
+                <Seats>D1</Seats>
+                <Seats>D2</Seats>
+                <Invisible>Filler</Invisible>
+                <Seats>D3</Seats>
+                <Seats>D4</Seats>
+                <Seats>D5</Seats>
+                <Seats>D6</Seats>
+            </View>
+
+            <View style={{ flexDirection: "row" }}>
+                <Invisible>Filler</Invisible>
+                <Seats>E1</Seats>
+                <Seats>E2</Seats>
+                <Invisible>Filler</Invisible>
+                <Seats>E3</Seats>
+                <Seats>E4</Seats>
+                <Seats>E5</Seats>
+                <Seats>E6</Seats>
             </View>
         </>
     )
