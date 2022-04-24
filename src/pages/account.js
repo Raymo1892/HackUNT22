@@ -68,6 +68,10 @@ function Account() {
                 </button>
             </div>
 
+            <text style={{ fontSize: 18 }}>
+                To create an account click here.
+            </text>
+
             <h4> User Logged In: </h4>
             {user?.email}
             <br></br>
