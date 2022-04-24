@@ -6,12 +6,16 @@ const Navbar = () => {
     return (
         <>
             <Nav>
-            <NavLink to="/" activeStyle>
                 <Images>
-                    <img src={require("./img/unt-logo.png")} alt="logo" width={198.8} height={85}/>
+                    <img src={require("./img/unt-logo.png")} alt="logo" width={198.8} height={85} />
                 </Images>
-             </NavLink>
+                <text style={{ fontSize: 35, color: "white", }}>
+                    Pro Movie Company
+                </text>
                 <NavMenu>
+                    <NavLink to="/" activeStyle>
+                        Home
+                    </NavLink>
                     <NavLink to="/about" activeStyle>
                         About
                     </NavLink>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 import {
     signInWithEmailAndPassword,
     onAuthStateChanged,
@@ -43,7 +44,7 @@ function Account() {
             <div>
                 <h3> Login</h3>
                 <input
-                    style={{ width: 400, height: 50, fontSize: 20 }}
+                    style={{ width: 400, height: 50, fontSize: 20, textAlign: "center" }}
                     placeholder="Email"
                     onChange={(event) => {
                         setLoginEmail(event.target.value);
@@ -52,7 +53,7 @@ function Account() {
                 <br></br>
                 <br></br>
                 <input
-                    style={{ width: 400, height: 50, fontSize: 20 }}
+                    style={{ width: 400, height: 50, fontSize: 20, textAlign: "center" }}
                     placeholder="Password"
                     type="password"
                     onChange={(event) => {
@@ -69,7 +70,11 @@ function Account() {
             </div>
 
             <text style={{ fontSize: 18 }}>
-                To create an account click here.
+                To create an account click{" "}
+                <Link to="/register">
+                    here
+                </Link>
+                .
             </text>
 
             <h4> User Logged In: </h4>

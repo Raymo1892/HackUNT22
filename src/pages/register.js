@@ -34,19 +34,29 @@ function Register() {
             <div>
                 <h3> Register User </h3>
                 <input
-                    placeholder="Email..."
+                    style={{ width: 400, height: 50, fontSize: 20, textAlign: "center" }}
+                    placeholder="Email"
                     onChange={(event) => {
                         setRegisterEmail(event.target.value);
                     }}
                 />
+                <br></br>
+                <br></br>
                 <input
-                    placeholder="Password..."
+                    style={{ width: 400, height: 50, fontSize: 20, textAlign: "center" }}
+                    placeholder="Password"
                     onChange={(event) => {
                         setRegisterPassword(event.target.value);
                     }}
                 />
+                <br></br>
+                <br></br>
 
-                <button onClick={register}> Create User</button>
+                <button onClick={register} style={{ width: 400, height: 50 }}>
+                    <text style={{ fontSize: 24 }}>
+                        Create User
+                    </text>
+                </button>
             </div>
         </div>
 
