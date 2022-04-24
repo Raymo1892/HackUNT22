@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Seats, Invisible} from "./indexElements";
 import { View } from "react-native";
+  
 
 const Movie1 = () => {
+    const [cls, setCls] = useState("green");
+
     return (
         <>
             <Invisible>Filler</Invisible>
@@ -10,7 +13,11 @@ const Movie1 = () => {
             <Invisible>Filler</Invisible>
             <View style={{ flexDirection:"row"}}>
             <Invisible>Filler</Invisible>
-            <Seats>1A</Seats>
+            <style>{`
+                .red {color: red}
+                .green {color: green}
+            `}</style>
+            <Seats className={cls}onClick={() => setCls((cls) => (cls === "red" ? "green" : "red"))}>1A</Seats>
             <Seats>2A</Seats>
             <Invisible>Filler</Invisible>
             <Seats>3A</Seats>
