@@ -4,11 +4,13 @@ import {
     onAuthStateChanged,
 } from "firebase/auth";
 import "./register.css";
+import { useNavigate } from "react-router-dom"
 import { auth } from "../firebase";
 
 function Register() {
     const [registerEmail, setRegisterEmail] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
+    const navigate = useNavigate();
 
     const [setUser] = useState({});
 
@@ -17,6 +19,7 @@ function Register() {
     });
 
     const register = async () => {
+
         try {
             const user = await createUserWithEmailAndPassword(
                 auth,
@@ -24,6 +27,8 @@ function Register() {
                 registerPassword
             );
             console.log(user);
+            alert("Account Created");
+            navigate('/');
         } catch (error) {
             console.log(error.message);
         }
@@ -34,21 +39,32 @@ function Register() {
             <div>
                 <h3> Register User </h3>
                 <input
-                    placeholder="Email..."
+                    style={{ width: 400, height: 50, fontSize: 20, textAlign: "center" }}
+                    placeholder="Email"
                     onChange={(event) => {
                         setRegisterEmail(event.target.value);
                     }}
                 />
+                <br></br>
+                <br></br>
                 <input
-                    placeholder="Password..."
+                    style={{ width: 400, height: 50, fontSize: 20, textAlign: "center" }}
+                    placeholder="Password"
+                    type="password"
                     onChange={(event) => {
                         setRegisterPassword(event.target.value);
                     }}
                 />
+                <br></br>
+                <br></br>
 
-                <button onClick={register}> Create User</button>
+                <button onClick={register} style={{ width: 400, height: 50 }}>
+                    <text style={{ fontSize: 24 }}>
+                        Create User
+                    </text>
+                </button>
             </div>
-        </div>
+        </div >
 
     );
 }
