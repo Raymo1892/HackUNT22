@@ -1,14 +1,11 @@
-@media all and (min-width: 480px) {
-    .Account{
-      padding: 120px 0;
+@media all and (min-width: 240px) {
+    .App{
+      font-size: 2.0rem;
+      text-align: center;
     }
-  
-    .Account form {
-      margin: 0 auto;
-      max-width: 320px;
-      font-size: 1.0rem;
-      height: 44,;
-      padding: 10,;
+    .Button{
+      width: "500px";
+    height: "30px";
 
     }
   }

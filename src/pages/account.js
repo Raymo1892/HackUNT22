@@ -41,35 +41,50 @@ function Account() {
         <div className="App">
 
             <div>
-                <h3> Login </h3>
+                <h3> Login</h3>
                 <input
+                    style={{ width: 400, height: 50, fontSize: 20 }}
                     placeholder="Email"
                     onChange={(event) => {
                         setLoginEmail(event.target.value);
                     }}
                 />
+                <br></br>
+                <br></br>
                 <input
+                    style={{ width: 400, height: 50, fontSize: 20 }}
                     placeholder="Password"
                     type="password"
                     onChange={(event) => {
                         setLoginPassword(event.target.value);
                     }}
                 />
-
-                <button onClick={login}> Login</button>
+                <br></br>
+                <br></br>
+                <button onClick={login} style={{ width: 400, height: 50 }}>
+                    <text style={{ fontSize: 24 }}>
+                        Login
+                    </text>
+                </button>
             </div>
 
             <h4> User Logged In: </h4>
             {user?.email}
+            <br></br>
+            <br></br>
 
-            <button onClick={logout}> Sign Out </button>
+            <button onClick={logout} style={{ width: 400, height: 50 }}>
+                <text style={{ fontSize: 24 }}>
+                    Sign Out
+                </text>
+            </button>
 
             <NavLink to="/register" activeStyle>
                 <Button>
                     Register
                 </Button>
             </NavLink>
-        </div>
+        </div >
     );
 }
 
