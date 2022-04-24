@@ -11,7 +11,7 @@ const Home = () => {
 
     let navigate = useNavigate(); 
     const routeChange = () =>{ 
-      let path = `./about`; 
+      let path = `./movie1`;
       navigate(path);
     };
 
@@ -106,10 +106,8 @@ const Home = () => {
             <Button onClick={routeChange}>
                     1:45 PM
             </Button>
-            <Button>
-                <Link to="/movie1">
+            <Button onClick={routeChange}>
                     4:30 PM
-                </Link>
             </Button>
             <Button>
                 <Link to="/movie1">
