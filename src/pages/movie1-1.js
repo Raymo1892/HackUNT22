@@ -1,10 +1,23 @@
 import React, { useState } from 'react';
 import { Seats, Invisible } from "./indexElements";
 import { View } from "react-native";
-
+import { db } from '../firebase.js';
+import { doc, updateDoc } from "firebase/firestore";
 
 const Movie1 = () => {
     const [cls, setCls] = useState("green");
+    const handleCheckedChange = async () => {
+        const taskDocRef = doc(db, 'Theater')
+        try {
+            await updateDoc(taskDocRef, {
+                Available: "false",
+                Bought: "true"
+            })
+        } catch (err) {
+            alert(err)
+        }
+    }
+
 
     return (
         <>
@@ -17,7 +30,7 @@ const Movie1 = () => {
                 .red {background-color: red}
                 .green {background-color: green}
             `}</style>
-                <Seats className={cls} onClick={() => setCls((cls) => (cls === "red" ? "green" : "red"))}>1A</Seats>
+                <Seats className={cls} Available="false" onClick={(handleCheckedChange) => setCls((cls) => (cls === "red" ? "green" : "red"))}>1A</Seats>
                 <Seats className={cls} onClick={() => setCls((cls) => (cls === "red" ? "green" : "red"))}>2A</Seats>
                 <Invisible>Filler</Invisible>
                 <Seats>3A</Seats>
