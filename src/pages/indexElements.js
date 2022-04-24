@@ -8,16 +8,13 @@ export const Image = styled.div`
 `;
 
 export const Button = styled.button`
-  background: ${props => props.primary ? "black" : "white"};
-  color: ${props => props.primary ? "white" : "black"};
-
-  font-size: 1.6em;
-  margin: 1em;
-  padding: 2em;
-  border: 5px solid black;
-  border-radius: 10px;
-  display: block;
-  flexDirection: row;
+background-color: black;
+color: white;
+font-size: 24px;
+padding: 10px 60px;
+border-radius: 5px;
+margin: 10px 5px;
+cursor: pointer;
 `;
 
 export const Seats = styled.button`
@@ -44,4 +41,14 @@ export const Invisible = styled.button`
   border-radius: 10px;
   display: block;
   flexDirection: row;
+`;
+
+export const Dates = styled.button`
+background-color: white;
+color: black;
+font-size: 24px;
+padding: 10px 60px;
+border-radius: 5px;
+margin: 10px 5px;
+cursor: pointer;
 `;
