@@ -1,10 +1,21 @@
 import React from 'react';
 import {Image, Button} from "./indexElements";
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import { View } from "react-native";
 import Box from '@material-ui/core/Box';
 
+
+
+
 const Home = () => {
+
+    let navigate = useNavigate(); 
+    const routeChange = () =>{ 
+      let path = `./about`; 
+      navigate(path);
+    };
+
+    
     return (
         <div>
             <Image> 
@@ -92,10 +103,8 @@ const Home = () => {
             </div>
             
             <View style={{ flexDirection:"row" }}>
-            <Button>
-                <Link to="/movie1">
+            <Button onClick={routeChange}>
                     1:45 PM
-                </Link>
             </Button>
             <Button>
                 <Link to="/movie1">
@@ -166,3 +175,4 @@ const Home = () => {
 };
 
 export default Home;
+

@@ -11,10 +11,10 @@ export const Button = styled.button`
   background: ${props => props.primary ? "black" : "white"};
   color: ${props => props.primary ? "white" : "black"};
 
-  font-size: 1.4em;
+  font-size: 1.6em;
   margin: 1em;
-  padding: 3em;
-  border: 2px solid black;
+  padding: 2em;
+  border: 5px solid black;
   border-radius: 10px;
   display: block;
   flexDirection: row;
