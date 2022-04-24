@@ -1,17 +1,4 @@
-import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
-
-export const NavLink = styled(Link)`
-  color: #FFFFFF;
-  display: flex;
-  text-decoration: none;
-  alignSelf: center;
-  margin: 2em;
-  cursor: pointer;
-  &.active {
-    color: #00853E;
-  }
-`;
 
 export const Image = styled.div`
   align-items: center;
@@ -24,10 +11,11 @@ export const Button = styled.button`
   background: ${props => props.primary ? "black" : "white"};
   color: ${props => props.primary ? "white" : "black"};
 
-  font-size: 1.5em;
-  margin: 2em;
-  padding: 0.25em 1em;
+  font-size: 1.4em;
+  margin: 1em;
+  padding: 3em;
   border: 2px solid black;
   border-radius: 10px;
   display: block;
+  flexDirection: row;
 `;
