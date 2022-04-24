@@ -7,6 +7,7 @@ import About from './pages/about';
 import Account from './pages/account';
 import Contact from './pages/contact';
 import Register from './pages/register';
+import SignUp from './pages/signup';
 
 function App() {
   return (
