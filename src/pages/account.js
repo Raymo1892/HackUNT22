@@ -7,12 +7,13 @@ import {
     signOut,
 } from "firebase/auth";
 import "./account.css";
-import { NavLink, Button } from "./accountElements";
+import { useNavigate } from "react-router-dom"
 import { auth } from "../firebase";
 
 function Account() {
     const [loginEmail, setLoginEmail] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
+    const navigate = useNavigate();
 
     const [user, setUser] = useState({});
 
@@ -28,6 +29,8 @@ function Account() {
                 loginPassword
             );
             console.log(user);
+            alert("Successfully Logged In");
+            navigate('/');
         } catch (error) {
             console.log(error.message);
             alert("Invalid Email/Password");
@@ -39,7 +42,7 @@ function Account() {
     };
 
     return (
-        <div className="App">
+        <div className="App" >
 
             <div>
                 <h3> Login</h3>
@@ -88,11 +91,6 @@ function Account() {
                 </text>
             </button>
 
-            <NavLink to="/register" activeStyle>
-                <Button>
-                    Register
-                </Button>
-            </NavLink>
         </div >
     );
 }

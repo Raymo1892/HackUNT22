@@ -4,11 +4,13 @@ import {
     onAuthStateChanged,
 } from "firebase/auth";
 import "./register.css";
+import { useNavigate } from "react-router-dom"
 import { auth } from "../firebase";
 
 function Register() {
     const [registerEmail, setRegisterEmail] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
+    const navigate = useNavigate();
 
     const [setUser] = useState({});
 
@@ -17,6 +19,7 @@ function Register() {
     });
 
     const register = async () => {
+
         try {
             const user = await createUserWithEmailAndPassword(
                 auth,
@@ -24,6 +27,8 @@ function Register() {
                 registerPassword
             );
             console.log(user);
+            alert("Account Created");
+            navigate('/');
         } catch (error) {
             console.log(error.message);
         }
@@ -45,6 +50,7 @@ function Register() {
                 <input
                     style={{ width: 400, height: 50, fontSize: 20, textAlign: "center" }}
                     placeholder="Password"
+                    type="password"
                     onChange={(event) => {
                         setRegisterPassword(event.target.value);
                     }}
@@ -58,7 +64,7 @@ function Register() {
                     </text>
                 </button>
             </div>
-        </div>
+        </div >
 
     );
 }
